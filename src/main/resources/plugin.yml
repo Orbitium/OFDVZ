@@ -1,0 +1,11 @@
+name: OFDVZ
+version: '${version}'
+main: me.orbitium.oflobby.OFDVZ
+api-version: 1.19
+authors: [Orbit]
+
+commands:
+  class:
+  game:
+  event:
+  dragon:

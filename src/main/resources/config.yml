@@ -1,0 +1,205 @@
+# Config for DVZ
+
+# The messages in plugin
+# The texts which wrapped with []
+# will be automatically filled by plugin
+# You can use color codes and you can change
+# All messages.
+messages:
+  aleUsed: "Ale used!"
+  yourClassChangedByModerator: "Your player class has been changed as [class_name] by a moderator!"
+  itemCrafted: "Item [item_name] crafted!"
+  playersTeleportedToLobby: "All players teleported to lobby"
+  classSelected: "Your class set as [class_name]"
+  waitUntilPlagueStart: "The plague event isn't started yet, you must wait until plague"
+  youAreInfected: "You're infected, losing health!"
+  youAreBleeding: "You're bleeding, losing health!"
+  healthStole: "You stole health from victim!"
+  kokoTeammateBuffMessage: "Your health increased by bard for [seconds] seconds!"
+  paladinTeammateBuffMessage: "Your health and speed increased by paladin for [seconds] seconds!"
+  beaconTakingDamage: "Beacon is taking damage!"
+  gameStarting: "Game starting..."
+  yourClassAssignedAutomatically: "Class select time is out! Your class assigned as [class_name]"
+  theGameFinishedByModerator: "The game finished by moderator!"
+  beaconIsLostTitle: "The beacon is lost! Game end"
+  allDefendersAreDeath: "All defenders are death!"
+  classChanged: "Player class changed!"
+  deathTitle: "&6You're death!"
+  deathSubTitle: "&6You'll spawn after [seconds] seconds!"
+
+  error:
+    cooldownIsNotFinished: "Please wait [remain] seconds for that process!"
+    aleDrinkCooldownIsNotFinished: "Ale drink cooldown isn't finished! Wait [remain] seconds!"
+    thereIsNotPossibleLocationsForGenerateTree: "There is no possible locations for generate tree!"
+    classNotFound: "Player Class not found!"
+    notEnoughResource: "Not enough resource for crafting [source_name]"
+
+    classGroupIsFull: "You can't join that class! The class group is full!"
+    playerCannotFound: "Player cannot found!"
+    classIsLocked: "You can't join that class! The class isn't unlocked yet!"
+
+# UI configs
+ui:
+  # When game started, all players must select one class
+  # Plugin will wait for that second and after game will
+  # start, if player didn't select any class the class will
+  # be automatickly set to player. (Config it at below)
+  # As seconds
+  classSelectWait: 30
+
+  # If class group is not full.
+  # For example builder class has 3 player limit
+  # and if 2 player selected builder, there is available space
+  # for new player
+  playerCountDisplayEmpty: "Group size: &2[current_player] / [max_player] (selecteable)"
+
+  # If class group is full
+  playerCountDisplayFull: "Group size: &4[current_player] / [max_player] (unselecteable)"
+
+  # What's the prefix of defender's name
+  # For example [Alchemist] Orbit
+  # You can use color codes.
+  # Maximum of 16 chacters
+  # [class_name] will be used from plugin don't delete it
+  nameTagPrefix: "&7[&a[class_name]&7]"
+
+
+  defenders:
+    # What's the title of defender class select  UI
+    classSelectTitle: "Select &2Defender Class"
+
+    # If player didn't select any class
+    # What's the name of the base class
+    defaultClass: BUILDER
+
+  attackers:
+    # What's the title of attacker class select UI
+    classSelectTitle: "Select &4Zombie Class"
+
+    # If player didn't select any class
+    # What's the name of the base class
+    defaultClass: ZOMBIE
+
+
+    # What's the lore of unlocked class
+    unlockedLore: "Unlocked at the percentage of %[percentage] zombie percentage"
+
+    # What's the lore of locked lcass
+    lockedLore: "Will be unlocked at the percentage of %[percentage] zombie percentage"
+
+# Any blocks can't be broken EXCEPT that list in any world
+# OP players won't be effected
+breakableBlocks:
+  - GRAVEL
+  - COBBLESTONE
+  - BRICKS
+  - WHEAT
+  - OAK_WOOD
+
+lobby:
+  # All players will teleport to that location
+  # You can use command /game prepare or /game start
+  # For teleport all players to here.
+  # If the game ends or you use /game finish
+  # All players teleports to that location
+  # First one must be world name, like "overworld"
+  # Second one is X, Third is Y and last one is Z
+  location: flat 240 20 132
+
+  # Lobby makes a countdown after command /game start
+  countdownMessage: "The game will start after [seconds] second"
+
+game:
+  defendersStartLocation: flat 0 100 0
+  attackersStartLocation: flat 25 100 25
+  eventWaitLocation: flat 25 100 25
+  # Which location will players wait until respawn (after death)
+  deathPlayersRespawnWaitLocation: flat 0 130 0
+
+beacon:
+  # The location of beacon (shrine)
+  beaconLocation: flat 2 152 16
+
+  # What's the title of the beacon's bossbar
+  bossBarTitle: "Beacon's health"
+
+  # What's the color of the beacon's bossbar
+  # Useable Colors: BLUE, GREEN, PINK, PURPLE, RED, WHITE and YELLOW
+  bossBarColor: GREEN
+
+  # What's the health of beacon
+  maxBeaconHealth: 10
+
+  # Beacon health delay for regen 1 health
+  # For example the beacon will regen 1 health
+  # after every 50 seconds
+  beaconRegenCooldown: 50
+
+  # What's the protection range of the beacon (as blocks)
+  # It's runs for x y z, like 5x5x5 area will be protected
+  # to block place. If there is zombie, beacon will lose health
+  protectionRange: 5
+
+events:
+  plague:
+    # When will start the plague after game start (as seconds)
+    startAfter: 72000
+
+    # What's the percentage of players will convert to zombie
+    convertPercentage: 20
+
+    # Event start text
+    annocumentStartText: "The plague is starting..."
+
+    # Event annocument text:
+    announcementStart: "The plague will start after [second] seconds"
+
+    # When player become zombie by event (message)
+    becomeZombieMessage: "You become zombie"
+
+spawner:
+  # What's the protection range of spawner (for block placing)(as blocks)
+  spawnerProtectionRange: 5
+
+  # What's the range for running spawners (as blocks)
+  spawnerRange: 20
+
+  # How much creature will spawn at the starting
+  spawnAmountPerRun: 4
+
+  # How often will be increased the spawn amount (as seconds)
+  spawnAmountIncreasePer: 60
+
+  # How much will be increased the spawn amount (after per 60 seconds in that example)
+  spawnAmountIncrease: 2
+
+  # How much can be spawner spawn amount for per game
+  maxSpawnAmount: 50
+
+  # All spawner locations
+  spawnerLocations:
+    - "flat 0 100 0"
+    - "flat 10 100 10"
+
+compassTargetLocations:
+  # You can add more location to here
+  # Do NOT use spaces in location name
+  # Use space only writing coordinates (for x y z)
+  # World name isn't needed
+  - "SHRINE 20 30 100"
+  - "GRAVELPIT 20 30 100"
+  - "EXAMPLE_LOCATION 0 0 0"
+
+compassTexts:
+  # Plugin will replace texts which wrapped with []
+  # The compassTargetLocations will be used in that texts
+  # Put location name in []
+  # For example:
+  # Down message will be sent as "Shrine at 200 120 40"
+  - "Shrine at [SHRINE]"
+  - "Gravel pit at [GRAVELPIT]"
+  - "Example location at [EXAMPLE_LOCATION]"
+
+# What's the type of the emergency block
+# Player's can break and collect that block
+emergencyBlock: DIRT
