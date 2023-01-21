@@ -92,7 +92,7 @@ public class BroodMother extends OFClass {
 
     @Override
     public boolean addPlayer(Player player, boolean forceByAdmin) {
-        MobDisguise mobDisguise = new MobDisguise(DisguiseType.SILVERFISH);
+        MobDisguise mobDisguise = new MobDisguise(DisguiseType.ENDERMITE);
         DisguiseAPI.disguiseEntity(player, mobDisguise);
         player.getPersistentDataContainer().set(OFDVZ.zombieKey, PersistentDataType.INTEGER, 0);
         return super.addPlayer(player, forceByAdmin);
